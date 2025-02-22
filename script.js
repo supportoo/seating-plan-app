@@ -1,3 +1,5 @@
+console.log("Javascript is loading correctly!");
+
 {\rtf1\ansi\ansicpg1252\cocoartf2512
 \cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
 {\colortbl;\red255\green255\blue255;}
