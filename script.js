@@ -48,9 +48,7 @@ function autoAssignSeats() {
     });
 }
 
-function exportLayout() {
-    alert("Export as PDF functionality will be implemented in the next update.");
-}
+
 
 document.getElementById('export-pdf').addEventListener('click', () => {
   const { jsPDF } = window.jspdf;
