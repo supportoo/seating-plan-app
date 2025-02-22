@@ -52,4 +52,19 @@ function exportLayout() {
     alert("Export as PDF functionality will be implemented in the next update.");
 }
 
+document.getElementById('export-pdf').addEventListener('click', () => {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+
+  // Capture the seating plan div (or any relevant section)
+  const seatingPlan = document.querySelector('.seating-plan');
+  doc.html(seatingPlan, {
+    callback: function (doc) {
+      doc.save('seating-plan.pdf');
+    },
+    x: 10,
+    y: 10
+  });
+});
+
 generateSeatingPlan();
