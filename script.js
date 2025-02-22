@@ -54,15 +54,12 @@ document.getElementById('export-pdf').addEventListener('click', () => {
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF();
 
-  // Capture the seating plan div (or any relevant section)
-  const seatingPlan = document.querySelector('.seating-plan');
-  doc.html(seatingPlan, {
-    callback: function (doc) {
-      doc.save('seating-plan.pdf');
-    },
-    x: 10,
-    y: 10
+  // Capture seating plan as an image for better formatting
+  html2canvas(document.querySelector('.seating-plan')).then(canvas => {
+    const imgData = canvas.toDataURL('image/png');
+    doc.addImage(imgData, 'PNG', 10, 10, 180, 100);
+    doc.save('seating-plan.pdf');
   });
 });
-
+  
 generateSeatingPlan();
